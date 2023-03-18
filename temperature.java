@@ -1,6 +1,7 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
+import java.awt.Color;
 
 public class temperature implements ActionListener {
   static JTextField frombox;
@@ -15,10 +16,16 @@ public class temperature implements ActionListener {
   public void temp_convert() {
     jframe = new JFrame("Temperature");
     JPanel main_content = new JPanel();
+    main_content.setBorder(BorderFactory.createLineBorder(Color.GRAY, 2));
+    main_content.setBackground(Color.WHITE);
     jframe.add(main_content);
 
-    JLabel message = new JLabel("Temperature");
-    message.setBounds(150, 0, 200, 30);
+    JLabel message = new JLabel("Temperature", SwingConstants.CENTER);
+    message.setBounds(0, 20, 600, 30);
+    message.setForeground(Color.BLUE);
+    message.setOpaque(true);
+    message.setBackground(Color.WHITE);
+    message.setBorder(BorderFactory.createLineBorder(Color.GRAY, 2));
     main_content.add(message);
 
     String[] tempmeasures = { "Kelvin", "Fahrenheit", "Celsius" };
@@ -37,18 +44,28 @@ public class temperature implements ActionListener {
 
     tobox = new JTextField(10);
     tobox.setBounds(150, 150, 130, 20);
+    tobox.setEditable(false);
     main_content.add(tobox);
 
     done = new JButton("Convert");
     done.setBounds(0, 200, 100, 20);
+    done.setBackground(Color.BLUE);
+    done.setForeground(Color.WHITE);
+    done.setBorder(BorderFactory.createLineBorder(Color.GRAY, 2));
     main_content.add(done);
 
     reset = new JButton("Reset");
     reset.setBounds(150, 200, 130, 20);
+    reset.setBackground(Color.BLUE);
+    reset.setForeground(Color.WHITE);
+    reset.setBorder(BorderFactory.createLineBorder(Color.GRAY, 2));
     main_content.add(reset);
 
     back = new JButton("Back");
     back.setBounds(300, 200, 130, 20);
+    back.setBackground(Color.BLUE);
+    back.setForeground(Color.WHITE);
+    back.setBorder(BorderFactory.createLineBorder(Color.GRAY, 2));
     main_content.add(back);
 
     frombase.addActionListener(this);

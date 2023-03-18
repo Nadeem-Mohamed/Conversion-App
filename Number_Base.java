@@ -3,6 +3,7 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
+import java.awt.Color;
 
 public class Number_Base implements ActionListener {
   // initializing variables for textfields and menus
@@ -22,10 +23,16 @@ public class Number_Base implements ActionListener {
     jFrame = new JFrame("Number Base Conversion");
     // creating the panel
     JPanel main_content = new JPanel();
+    main_content.setBorder(BorderFactory.createLineBorder(Color.GRAY, 2));
+    main_content.setBackground(Color.WHITE);
     jFrame.add(main_content);
     // creating the message
-    JLabel message = new JLabel("Number Base Conversion");
-    message.setBounds(150, 50, 200, 30);
+    JLabel message = new JLabel("Number Base Conversion", SwingConstants.CENTER);
+    message.setBounds(0, 20, 600, 30);
+    message.setForeground(Color.BLUE);
+    message.setOpaque(true);
+    message.setBackground(Color.WHITE);
+    message.setBorder(BorderFactory.createLineBorder(Color.GRAY, 2));
     main_content.add(message);
     // setting up the from menu
     frombase = new JComboBox<>(numberbase);
@@ -42,18 +49,28 @@ public class Number_Base implements ActionListener {
     // setting up the to textfield
     tobox = new JTextField(10);
     tobox.setBounds(150, 150, 130, 20);
+    tobox.setEditable(false);
     main_content.add(tobox);
     // creating the convert button
     done = new JButton("Convert");
     done.setBounds(0, 200, 100, 20);
+    done.setBackground(Color.BLUE);
+    done.setForeground(Color.WHITE);
+    done.setBorder(BorderFactory.createLineBorder(Color.GRAY, 2));
     main_content.add(done);
     // creating the reset button
     reset = new JButton("Reset");
     reset.setBounds(150, 200, 130, 20);
+    reset.setBackground(Color.BLUE);
+    reset.setForeground(Color.WHITE);
+    reset.setBorder(BorderFactory.createLineBorder(Color.GRAY, 2));
     main_content.add(reset);
 
     back = new JButton("Back");
     back.setBounds(300, 200, 130, 20);
+    back.setBackground(Color.BLUE);
+    back.setForeground(Color.WHITE);
+    back.setBorder(BorderFactory.createLineBorder(Color.GRAY, 2));
     main_content.add(back);
 
     // performing the actions
